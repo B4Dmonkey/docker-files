@@ -1,0 +1,51 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$nodejs\
+$python\
+$cmd_duration\
+$jobs\
+$time
+"""
+
+add_newline = false
+
+[fill]
+symbol = " "
+
+
+[git_branch]
+format ="[[$symbol](bold green)$branch(:$remote_branch)]($style) "
+style = "bold italic purple"
+
+[git_status]
+format = "([\\[ $all_status$ahead_behind\\]]($style) )"
+style = "white"
+conflicted = "[($count) ](bold red)"
+ahead = "[⇡($count) ](bold cyan)"
+behind = "[⇣($count) ](bold red)"
+diverged = "[($count) ](bold purlple)"
+untracked = "[?($count) ](bold red)"
+stashed = '[\$($count) ](bold yellow)'
+modified= "[!($count) ](bold yellow)"
+staged = "[($count) ](bold green)"
+renamed = "[»($count) ](bold white)"
+deleted = "[✘($count) ](bold red)"
+
+[time]
+disabled = false
+format = 'at [$time]($style) '
+time_format = "%R %P"
+use_12hr = true
+
+[nodejs]
+format ="[$symbol($version )]($style)"
+
+[directory]
+home_symbol = ""
+truncation_length = 2
+truncation_symbol = "/"
